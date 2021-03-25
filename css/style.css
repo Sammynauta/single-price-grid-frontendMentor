@@ -1,0 +1,191 @@
+:root {
+    --Cyan: hsl(179, 62%, 43%);
+    --Cyan2: hsl(179, 63%, 46%);
+    --Bright-Yellow: hsl(71, 73%, 54%);
+    --Light-Gray: hsl(204, 43%, 93%);
+    --Grayish-Blue: hsl(218, 22%, 67%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+   background-color: var(--Light-Gray);
+   font-family: 'Karla', sans-serif;
+   font-size: 16px;
+}
+
+.cardbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100vw;
+}
+.card {
+    display: grid;
+    width: 60%;
+    max-width: 650px;
+    justify-content: center;
+    grid-template-areas: 
+    'principal principal'
+    'box-left box-right';
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-columns: 0.48fr 0.52fr;
+    border-radius: 10px;
+    
+}
+
+.principal {
+    grid-area: principal;
+    background-color: white;
+    padding: 2em 2em 2em 2em;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 3px 3px 7px 0 #757575;
+}
+
+.box-left {
+    grid-area: box-left;
+    background-color: var(--Cyan) ;
+    padding: 1em 1em 1em 1em;;
+    border-radius: 0 0  0 10px;
+    box-shadow: 3px 3px 7px 0 #757575;
+  
+}
+
+.box-right {
+    grid-area: box-right;
+    background-color: var(--Cyan2) ;
+    padding: 1em 1em 1em 1em;
+    border-radius: 0 0  10px;
+    box-shadow: 3px 3px 7px 0 #757575;
+}
+
+.heading {
+    color: var( --Cyan);
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.subHeading {
+    color: var(--Bright-Yellow);
+    font-weight: 700;
+}
+
+.description {
+    color: var(--Grayish-Blue);
+    padding-top: 1em;
+    font-weight: 400;
+}
+
+/* box left*/
+.titleLeft {
+    color: white;
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.price {
+    display: flex;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.pricetext {
+    color: #ffffff;
+    font-size: 35px;
+    margin-right: 10px;
+}
+
+.month {
+    color: var(--Light-Gray);
+    font-weight: 700;
+}
+
+.priceDescription {
+    color: #ffffff;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+.signUp {
+    border: none;
+    margin-top: 20px;
+    background-color: var(--Bright-Yellow);
+    padding: 15px 35%;
+    border-radius: 5px;
+    color: #ffffff;
+    box-shadow: 0 0 7px -2px #757575;
+    font-weight: 600;
+    font-family: 'Karla', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    transform: scale(1);
+    transform-style: preserve-3d; /* adiciona perspectiva 3d, para que o elemento nao fique achatada no plano */
+    transition: transform .9s; /* adiciona efeito de movimento ao flip do card */
+}
+
+.signUp:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+/* box right*/
+.titleRight {
+    color: #ffffff;
+    padding-bottom: 10px;
+}
+
+p {
+    color: var( --Light-Gray);
+}
+
+header {
+    display: flex;
+    background: gray;
+    height: 120px;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+header .socialmidia {
+    font-size: 30px;
+    padding: 10px;
+    margin: 5px;
+}
+
+header .socialmidia a i {
+    color: white;
+}
+
+header .socialmidia a i:hover {
+    color: rgb(58, 57, 57);
+    transition: 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 992px) {
+
+   .card {
+    height: 80vh;
+    grid-template-areas: 
+    'principal principal'
+    'box-left box-left'
+    'box-right box-right';
+   }
+
+   .box-left {
+    border-radius: 0;
+   }
+
+   .box-right {
+    border-radius: 0 0 10px 10px;
+   }
+   
+}
